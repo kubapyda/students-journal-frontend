@@ -1,8 +1,48 @@
-<div class="container">
-
-  <div class="starter-template">
-    <h1>Dziennik ocen studentow</h1>
-    <p class="lead">Oceny studentow</p>
+<header class="header">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Dziennik ocen studentow</h1>
+      </div>
+    </div>
   </div>
+</header>
 
-</div>
+<section id="breadcrumb">
+  <div class="container-fluid">
+    <ol class="breadcrumb">
+      <li class="active">Home</li>
+    </ol>
+  </div>
+</section>
+
+<section id="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+
+        <div class="list-group">
+          <a href="#" class="list-group-item">Wydziały</a>
+          <a href="#" class="list-group-item">Kierunki studiów</a>
+          <a href="#" class="list-group-item">Grupy dziekańskie</a>
+          <a href="#" class="list-group-item">Projekty</a>
+          <a href="#" class="list-group-item active main-color-bg">Studenci</a>
+          <a href="#" class="list-group-item">Prowadzący</a>
+          <a href="#" class="list-group-item">Przedmioty</a>
+          <a href="#" class="list-group-item">Administratorzy</a>
+          <a href="#" class="list-group-item">Wyloguj</a>
+        </div>
+      </div>
+
+      <div class="col-md-10">
+        <div class="card">
+          <div class="card-block">
+
+            <router-outlet></router-outlet>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

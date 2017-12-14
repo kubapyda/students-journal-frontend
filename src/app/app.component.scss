@@ -1,0 +1,28 @@
+.main-color-bg {
+  background-color: #a74c3c !important;
+  border-color: #c8392b !important;
+  color: #fff;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.breadcrumb {
+  background: #ccc;
+  color: #333;
+  a {
+    color: #333;
+  }
+}
+
+.card {
+  border-radius: 8px;
+  .card-title {
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+}

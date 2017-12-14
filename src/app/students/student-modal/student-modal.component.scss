@@ -1,0 +1,16 @@
+
+form {
+  margin: 0 auto;
+  width: 405px;
+  .single-input {
+    margin-bottom: 15px;
+    label {
+      width: 150px;
+    }
+    .form-control {
+      display: inline-block;
+      width: 250px;
+    }
+  }
+}
+
