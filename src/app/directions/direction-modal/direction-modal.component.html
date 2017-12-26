@@ -1,0 +1,18 @@
+<form #directionsForm="ngForm" (ngSubmit)="save()">
+  <div class="modal-header">
+    <h4 class="modal-title">Dodaj lub edytuj Wydział</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="single-input">
+        <label>Nazwa wydziału</label>
+        <input class="form-control" type="text" [(ngModel)]="directionService.direction.direction_name" name="directionName" #directionName="ngModel" required>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Zamknij</button>
+    <button type="submit" [disabled]="!directionsForm.valid" class="btn btn-primary">Zapisz</button>
+  </div>
+</form>

@@ -1,0 +1,32 @@
+<router-outlet></router-outlet>
+
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['add']">Dodaj</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nazwa wydziału</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let direction of directionService.directionsList">
+      <th scope="row">{{ direction.id }}</th>
+      <td>{{ direction.name }}</td>
+      <td>
+        <button [routerLink]="['edit', direction.id]" class="btn btn-edit">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td>
+        <button [routerLink]="['delete']" [queryParams]="{ id: direction.id, name: direction.name }" class="btn btn-edit">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
