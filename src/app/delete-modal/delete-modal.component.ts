@@ -30,7 +30,7 @@ export class DeletedModalComponent implements OnDestroy {
   }
 
   delete() {
-    this.helpersService.deleteElement(+this.properties.id, 'directions').subscribe(data => {
+    this.helpersService.deleteElement(+this.properties.id, this.properties.state).subscribe(data => {
       this.toastr.success(`Usunięto ${this.properties.title}: ${this.properties.name}`);
       this.afterDelete();
     }, error => {

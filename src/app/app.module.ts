@@ -1,4 +1,5 @@
 import { DeleteModalComponent, DeletedModalComponent } from './delete-modal/delete-modal.component';
+import { DeparmentModalComponent, DeparmentsModalComponent } from './departments/deparments-modal/deparments-modal.component';
 import { DirectionModalComponent, DirectionsModalComponent } from './directions/direction-modal/direction-modal.component';
 import { NgbdModalContent, StudentModalComponent } from './students/student-modal/student-modal.component';
 
@@ -14,6 +15,7 @@ import { HelpersService } from './helpers.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 import { NgModule } from '@angular/core';
+import { NgSelectizeModule } from 'ng-selectize';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudentsComponent } from './students/students.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -29,7 +31,9 @@ import { ToastrModule } from 'ngx-toastr';
     DirectionsModalComponent,
     DepartmentsComponent,
     DeleteModalComponent,
-    DeletedModalComponent
+    DeletedModalComponent,
+    DeparmentsModalComponent,
+    DeparmentModalComponent
   ],
   imports: [
     BrowserModule,
@@ -39,14 +43,16 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     HttpClientModule,
     NgHttpLoaderModule,
-    FormsModule
+    FormsModule,
+    NgSelectizeModule
   ],
   entryComponents: [
-    NgbdModalContent, 
+    NgbdModalContent,
     DirectionsModalComponent,
-    DeletedModalComponent
+    DeletedModalComponent,
+    DeparmentModalComponent
   ],
-  providers: [ 
+  providers: [
     Globals,
     HelpersService
   ],

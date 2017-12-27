@@ -5,9 +5,7 @@ import { NavigationEnd, Router } from '@angular/router';
 
 import { Direction } from './shared/direction';
 import { DirectionsService } from './shared/directions.service';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-directions',
@@ -17,12 +15,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class DirectionsComponent implements OnInit {
 
-  directions: Direction[];
-
   constructor(
-    private http: HttpClient,
     public directionService: DirectionsService,
-    private toastr: ToastrService,
     private router: Router
   ) { }
 

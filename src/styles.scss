@@ -36,6 +36,15 @@ form {
     margin: 0 auto;
     width: 405px;
     margin-bottom: 15px;
+    .selectize-control {
+      display: inline-block;
+      .selectize-input {
+        width: 250px;
+        box-shadow: none;
+        background: transparent;
+        border: 1px solid #ced4da;
+      }
+    }
     label {
       width: 150px;
     }

@@ -2,6 +2,7 @@ import { NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+import { DeparmentsModalComponent } from './departments/deparments-modal/deparments-modal.component';
 import { DepartmentsComponent } from './departments/departments.component';
 import { DirectionModalComponent } from './directions/direction-modal/direction-modal.component';
 import { DirectionsComponent } from './directions/directions.component';
@@ -48,15 +49,19 @@ const routes: Routes = [
     children: [
       {
         path: 'add',
-        component: DirectionModalComponent
+        component: DeparmentsModalComponent
       },
       {
         path: 'edit/:id',
-        component: DirectionModalComponent
+        component: DeparmentsModalComponent
       },
       {
-        path: 'delete/:id',
-        component: DeleteModalComponent
+        path: 'delete',
+        component: DeleteModalComponent,
+        data: {
+          title: 'kierunek studiów',
+          state: 'departments'
+        }
       }
     ]
   }

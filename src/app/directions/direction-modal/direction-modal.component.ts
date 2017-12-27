@@ -79,9 +79,7 @@ export class DirectionModalComponent {
 
   constructor(
     private modalService: NgbModal,
-    private router: Router,
-    private route: ActivatedRoute,
-    private helpersService: HelpersService
+    private router: Router
   ) {
     this.modalService.open(DirectionsModalComponent, {
       backdrop: 'static'
