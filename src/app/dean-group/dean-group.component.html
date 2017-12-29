@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['add']">Dodaj</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nazwa grupy</th>
+      <th>Nazwa kierunku</th>
+      <th>Nazwa wydziału</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let deanGroup of deanGroupService.deanGroupList">
+      <th scope="row">{{ deanGroup.id }}</th>
+      <td>{{ deanGroup.name }}</td>
+      <td>{{ deanGroup.departmentName }}</td>
+      <td>{{ deanGroup.directionName }}</td>
+      <td>
+        <button [routerLink]="['edit', deanGroup.id]" class="btn btn-edit">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td>
+        <button [routerLink]="['delete']" [queryParams]="{ id: deanGroup.id, name: deanGroup.name }" class="btn btn-edit">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

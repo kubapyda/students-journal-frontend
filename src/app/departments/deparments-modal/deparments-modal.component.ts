@@ -3,6 +3,7 @@ import { Router, RouterStateSnapshot } from '@angular/router';
 
 import { DepartmentsService } from '../shared/departments.service';
 import { DirectionsService } from '../../directions/shared/directions.service';
+import { Globals } from './../../global';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { ToastrService } from 'ngx-toastr';
@@ -23,20 +24,11 @@ export class DeparmentModalComponent implements OnInit {
     private departmentsService: DepartmentsService,
     private directionsService: DirectionsService,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private global: Globals
   ) {
     this.directionsService.getDirectionsList();
-
-    this.selectizeConfig = {
-      highlight: false,
-      create: false,
-      persist: true,
-      plugins: ['dropdown_direction', 'remove_button'],
-      dropdownDirection: 'down',
-      labelField: 'name',
-      valueField: 'id',
-      searchField: ['name']
-    };
+    this.selectizeConfig = global.selectizeConfig;
 
     const snapshot: RouterStateSnapshot = router.routerState.snapshot;
     const array = snapshot.url.split('/');

@@ -25,7 +25,6 @@ export class DepartmentsService {
   getDeparment(id: number) {
     this.http.get<Department>(`${this.url}/${id}`).subscribe(data => {
       this.department = data;
-      console.log(this.department);
     });
   }
 
