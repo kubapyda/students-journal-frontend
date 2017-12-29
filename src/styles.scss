@@ -4,53 +4,53 @@
 @import "~ngx-toastr/toastr.css";
 
 table {
-  tbody {
-    tr {
-      td {
-          max-width: 20px;
-          .btn-edit {
-            background-color: transparent;
-            cursor: pointer;
-            i {
-              font-size: 24px;
-              color: #338DFF;
+    tbody {
+        tr {
+            td {
+                max-width: 20px;
+                .btn-edit {
+                    background-color: transparent;
+                    cursor: pointer;
+                    i {
+                        font-size: 24px;
+                        color: #338DFF;
+                    }
+                }
+                &:last-child {
+                    text-align: right;
+                    max-width: 20px;
+                    i {
+                        font-size: 24px;
+                        color: red;
+                    }
+                }
             }
-          }
-        &:last-child {
-          text-align: right;
-          max-width: 20px;
-          i {
-            font-size: 24px;
-            color: red;
-          }
         }
-      }
     }
-  }
 }
 
 
 
 form {
-  .single-input {
-    margin: 0 auto;
-    width: 405px;
-    margin-bottom: 15px;
-    .selectize-control {
-      display: inline-block;
-      .selectize-input {
-        width: 250px;
-        box-shadow: none;
-        background: transparent;
-        border: 1px solid #ced4da;
-      }
+    .single-input {
+        margin: 0 auto;
+        width: 405px;
+        margin-bottom: 15px;
+        .selectize-control {
+            display: inline-block;
+            .selectize-input {
+                width: 250px;
+                box-shadow: none;
+                background: transparent;
+                border: 1px solid #ced4da;
+            }
+        }
+        label {
+            width: 150px;
+        }
+        .form-control {
+            display: inline-block;
+            width: 250px;
+        }
     }
-    label {
-      width: 150px;
-    }
-    .form-control {
-      display: inline-block;
-      width: 250px;
-    }
-  }
 }

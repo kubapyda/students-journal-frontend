@@ -18,8 +18,20 @@ const routes: Routes = [
     component: StudentsComponent,
     children: [
       {
-        path: 'edit',
+        path: 'add',
         component: StudentModalComponent
+      },
+      {
+        path: 'edit/:id',
+        component: StudentModalComponent
+      },
+      {
+        path: 'delete',
+        component: DeleteModalComponent,
+        data: {
+          title: 'studenta',
+          state: 'students'
+        }
       }
     ]
   },

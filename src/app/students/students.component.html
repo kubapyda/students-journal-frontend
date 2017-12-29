@@ -1,5 +1,9 @@
 <router-outlet></router-outlet>
 
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['add']">Dodaj</button>
+</div>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -7,60 +11,35 @@
       <th>Imię</th>
       <th>Nazwisko</th>
       <th>Numer indeksu</th>
-      <th>Grupa dziekańska</th>
       <th>Login</th>
+      <th>Grupa dziekańska</th>
+      <th>Kierunek</th>
+      <th>Wydział</th>
       <th></th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>U-12345</td>
-      <td>First</td>
-      <td>@mdo</td>
+    <tr *ngFor="let student of studentsService.studentsList">
+      <th scope="row">{{ student.id }}</th>
+      <td>{{ student.name }}</td>
+      <td>{{ student.surname }}</td>
+      <td>{{ student.indexNumber }}</td>
+      <td>{{ student.login }}</td>
+      <td>{{ student.deanGroup }}</td>
+      <td>{{ student.department }}</td>
+      <td>{{ student.direction }}</td>
       <td>
-        <button [routerLink]="['edit']" class="btn btn-edit">
+        <button [routerLink]="['edit', student.id]" class="btn btn-edit">
           <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
         </button>
       </td>
       <td>
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>U-23456</td>
-      <td>First</td>
-      <td>@fat</td>
-      <td>
-        <button [routerLink]="['edit']" class="btn btn-edit">
-          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <button [routerLink]="['delete']" [queryParams]="{ id: student.id, name: student.name }" class="btn btn-edit">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
         </button>
-      </td>
-      <td>
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>U-34567</td>
-      <td>First</td>
-      <td>@twitter</td>
-      <td>
-        <button [routerLink]="['edit']" class="btn btn-edit">
-          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-        </button>
-      </td>
-      <td>
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
       </td>
     </tr>
   </tbody>
 </table>
+

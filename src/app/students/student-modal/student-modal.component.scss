@@ -1,16 +1,14 @@
-
-form {
-  margin: 0 auto;
-  width: 405px;
-  .single-input {
-    margin-bottom: 15px;
+.single-input.selectize {
+    position: relative;
+    height: 39px;
     label {
-      width: 150px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
-    .form-control {
-      display: inline-block;
-      width: 250px;
+    ng-selectize {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
-  }
 }
-

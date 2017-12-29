@@ -1,35 +1,39 @@
-<div class="modal-header">
-  <h4 class="modal-title">Dodaj studenta</h4>
-  <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <form>
-    <div class="single-input">
-      <label>Imię</label>
-      <input class="form-control" type="text">
+<form #studentsForm="ngForm" (ngSubmit)="save()">
+    <div class="modal-header">
+      <h4 class="modal-title">Dodaj lub edytuj: Studenta</h4>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
-    <div class="single-input">
-      <label>Nazwisko</label>
-      <input class="form-control" type="text">
+    <div class="modal-body">
+        <div class="single-input">
+            <label>Imię</label>
+            <input class="form-control" type="text" [(ngModel)]="studentsService.student.student_name" name="studentName" #studentName="ngModel" required>
+          </div>
+          <div class="single-input">
+            <label>Nazwisko</label>
+            <input class="form-control" type="text" [(ngModel)]="studentsService.student.student_surname" name="studentSurname" #studentSurname="ngModel" required>
+          </div>
+          <div class="single-input">
+            <label>Numer indeksu</label>
+            <input class="form-control" type="text" [(ngModel)]="studentsService.student.student_index_number" name="studentIndexNumber" #studentIndexNumber="ngModel" required>
+          </div>
+          <div class="single-input selectize">
+            <label>Grupa dziekańska</label>
+            <ng-selectize [config]="selectizeConfig" [options]="deanGroupService.deanGroupList" [(ngModel)]="studentsService.student.group_id" name="deanGroupId" #deanGroupId="ngModel" required></ng-selectize>
+          </div>
+          <div class="single-input">
+            <label>Login</label>
+            <input class="form-control" type="text" [(ngModel)]="studentsService.student.student_login" name="studentLogin" #studentLogin="ngModel" required>
+          </div>
+          <div class="single-input">
+            <label>Haslo</label>
+            <input class="form-control" type="password" [(ngModel)]="studentsService.student.student_password" name="studentPassword" #studentPassword="ngModel" required>
+          </div>
     </div>
-    <div class="single-input">
-      <label>Numer indeksu</label>
-      <input class="form-control" type="text">
-    </div>
-    <div class="single-input">
-      <label>Login</label>
-      <input class="form-control" type="text">
-    </div>
-    <div class="single-input">
-      <label>Haslo</label>
-      <input class="form-control" type="password">
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Zamknij</button>
+      <button type="submit" [disabled]="!studentsForm.valid" class="btn btn-primary">Zapisz</button>
     </div>
   </form>
 
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Zamknij</button>
-  <button type="button" class="btn btn-primary">Zapisz</button>
-</div>

@@ -2,7 +2,7 @@ import { DeanGroupModalComponent, DeanGroupsModalComponent } from './dean-group/
 import { DeleteModalComponent, DeletedModalComponent } from './delete-modal/delete-modal.component';
 import { DeparmentModalComponent, DeparmentsModalComponent } from './departments/deparments-modal/deparments-modal.component';
 import { DirectionModalComponent, DirectionsModalComponent } from './directions/direction-modal/direction-modal.component';
-import { NgbdModalContent, StudentModalComponent } from './students/student-modal/student-modal.component';
+import { StudentsModalComponent, StudentModalComponent } from './students/student-modal/student-modal.component';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,7 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     StudentsComponent,
     StudentModalComponent,
-    NgbdModalContent,
+    StudentsModalComponent,
     DirectionsComponent,
     DirectionModalComponent,
     DirectionsModalComponent,
@@ -52,7 +52,7 @@ import { ToastrModule } from 'ngx-toastr';
     NgSelectizeModule
   ],
   entryComponents: [
-    NgbdModalContent,
+    StudentsModalComponent,
     DirectionsModalComponent,
     DeletedModalComponent,
     DeparmentModalComponent,
