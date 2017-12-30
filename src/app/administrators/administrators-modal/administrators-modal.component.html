@@ -1,0 +1,31 @@
+<form #administratorsForm="ngForm" (ngSubmit)="save()">
+  <div class="modal-header">
+    <h4 class="modal-title">Dodaj lub edytuj: Studenta</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <div class="single-input">
+          <label>Imię</label>
+          <input class="form-control" type="text" [(ngModel)]="administratorsService.administrator.admin_name" name="adminName" #adminName="ngModel" required>
+        </div>
+        <div class="single-input">
+          <label>Nazwisko</label>
+          <input class="form-control" type="text" [(ngModel)]="administratorsService.administrator.admin_surname" name="adminSurname" #adminSurname="ngModel" required>
+        </div>
+        <div class="single-input">
+          <label>Login</label>
+          <input class="form-control" type="text" [(ngModel)]="administratorsService.administrator.admin_login" name="adminLogin" #adminLogin="ngModel" required>
+        </div>
+        <div class="single-input">
+          <label>Haslo</label>
+          <input class="form-control" type="password" [(ngModel)]="administratorsService.administrator.admin_password" name="adminPassword" #adminPassword="ngModel" required>
+        </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Zamknij</button>
+    <button type="submit" [disabled]="!administratorsForm.valid" class="btn btn-primary">Zapisz</button>
+  </div>
+</form>
+

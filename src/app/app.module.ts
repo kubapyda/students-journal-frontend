@@ -1,9 +1,14 @@
+import {
+  AdministratorModalComponent,
+  AdministratorsModalComponent
+} from './administrators/administrators-modal/administrators-modal.component';
 import { DeanGroupModalComponent, DeanGroupsModalComponent } from './dean-group/dean-group-modal/dean-group-modal.component';
 import { DeleteModalComponent, DeletedModalComponent } from './delete-modal/delete-modal.component';
 import { DeparmentModalComponent, DeparmentsModalComponent } from './departments/deparments-modal/deparments-modal.component';
 import { DirectionModalComponent, DirectionsModalComponent } from './directions/direction-modal/direction-modal.component';
-import { StudentsModalComponent, StudentModalComponent } from './students/student-modal/student-modal.component';
+import { StudentModalComponent, StudentsModalComponent } from './students/student-modal/student-modal.component';
 
+import { AdministratorsComponent } from './administrators/administrators.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,7 +43,10 @@ import { ToastrModule } from 'ngx-toastr';
     DeparmentModalComponent,
     DeanGroupComponent,
     DeanGroupModalComponent,
-    DeanGroupsModalComponent
+    DeanGroupsModalComponent,
+    AdministratorsComponent,
+    AdministratorsModalComponent,
+    AdministratorModalComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +64,8 @@ import { ToastrModule } from 'ngx-toastr';
     DirectionsModalComponent,
     DeletedModalComponent,
     DeparmentModalComponent,
-    DeanGroupModalComponent
+    DeanGroupModalComponent,
+    AdministratorModalComponent
   ],
   providers: [
     Globals,

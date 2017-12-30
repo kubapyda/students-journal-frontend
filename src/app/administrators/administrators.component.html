@@ -1,0 +1,37 @@
+<router-outlet></router-outlet>
+
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['add']">Dodaj</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Login</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let admin of administratorsService.administratorsList">
+      <th scope="row">{{ admin.admin_ID }}</th>
+      <td>{{ admin.admin_name }}</td>
+      <td>{{ admin.admin_surname }}</td>
+      <td>{{ admin.admin_login }}</td>
+      <td>
+        <button [routerLink]="['edit', admin.admin_ID]" class="btn btn-edit">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td>
+        <button [routerLink]="['delete']" [queryParams]="{ id: admin.admin_ID, name: admin.admin_name + ' ' + admin.admin_surname }" class="btn btn-edit">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

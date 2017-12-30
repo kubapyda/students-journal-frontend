@@ -1,6 +1,8 @@
 import { NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AdministratorsComponent } from './administrators/administrators.component';
+import { AdministratorsModalComponent } from './administrators/administrators-modal/administrators-modal.component';
 import { DeanGroupComponent } from './dean-group/dean-group.component';
 import { DeanGroupsModalComponent } from './dean-group/dean-group-modal/dean-group-modal.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
@@ -97,6 +99,28 @@ const routes: Routes = [
         data: {
           title: 'grupę dziekańską',
           state: 'deangroup'
+        }
+      }
+    ]
+  },
+  {
+    path: 'administrators',
+    component: AdministratorsComponent,
+    children: [
+      {
+        path: 'add',
+        component: AdministratorsModalComponent
+      },
+      {
+        path: 'edit/:id',
+        component: AdministratorsModalComponent
+      },
+      {
+        path: 'delete',
+        component: DeleteModalComponent,
+        data: {
+          title: 'administratora',
+          state: 'administrators'
         }
       }
     ]

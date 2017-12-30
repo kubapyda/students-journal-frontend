@@ -35,7 +35,7 @@
         </button>
       </td>
       <td>
-        <button [routerLink]="['delete']" [queryParams]="{ id: student.id, name: student.name }" class="btn btn-edit">
+        <button [routerLink]="['delete']" [queryParams]="{ id: student.id, name: student.name + ' ' + student.surname }" class="btn btn-edit">
           <i class="fa fa-trash-o" aria-hidden="true"></i>
         </button>
       </td>
