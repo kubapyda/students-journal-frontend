@@ -1,0 +1,35 @@
+<router-outlet></router-outlet>
+
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['add']">Dodaj</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nazwa</th>
+      <th>Prowadzący</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subject of subjectsService.subjectsList">
+      <th scope="row">{{ subject.id }}</th>
+      <td>{{ subject.name }}</td>
+      <td>{{ subject.leader }}</td>
+      <td>
+        <button [routerLink]="['edit', subject.id]" class="btn btn-edit">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td>
+        <button [routerLink]="['delete']" [queryParams]="{ id: subject.id, name: subject.name }" class="btn btn-edit">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

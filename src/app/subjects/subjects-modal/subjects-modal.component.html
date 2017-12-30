@@ -1,0 +1,23 @@
+<form #subjectsForm="ngForm" (ngSubmit)="save()">
+  <div class="modal-header">
+    <h4 class="modal-title">Dodaj lub edytuj: Przedmiot</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="single-input">
+          <label>Nazwa</label>
+          <input class="form-control" type="text" [(ngModel)]="subjectsService.subject.subject_name" name="subjectName" #subjectName="ngModel" required>
+        </div>
+        <div class="single-input selectize">
+          <label>Prowadzący</label>
+          <ng-selectize [config]="selectizeConfig" [options]="leadersService.leadersForSelectize" [(ngModel)]="subjectsService.subject.lead_ID" name="leadId" #leadId="ngModel" required></ng-selectize>
+        </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Zamknij</button>
+    <button type="submit" [disabled]="!subjectsForm.valid" class="btn btn-primary">Zapisz</button>
+  </div>
+</form>
+

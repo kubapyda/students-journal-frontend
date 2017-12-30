@@ -10,6 +10,7 @@ export class LeadersService {
 
   private url: string;
   public leadersList: Leader[];
+  public leadersForSelectize;
   public leader: Leader = new Leader('', '', '', '', '');
 
   constructor(private http: HttpClient, private global: Globals) {
@@ -22,10 +23,16 @@ export class LeadersService {
     });
   }
 
+  getLeadersForSelectize() {
+    this.url = `${this.global.apiAddress}/api/selectize`;
+    this.http.get(this.url).subscribe(data => {
+      this.leadersForSelectize = data;
+    });
+  }
+
   getLeader(id: number) {
     this.http.get<Leader>(`${this.url}/${id}`).subscribe(data => {
       this.leader = data;
-      console.log(this.leader);
     });
   }
 

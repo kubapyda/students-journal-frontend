@@ -8,6 +8,7 @@ import { DeparmentModalComponent, DeparmentsModalComponent } from './departments
 import { DirectionModalComponent, DirectionsModalComponent } from './directions/direction-modal/direction-modal.component';
 import { LeaderModalComponent, LeadersModalComponent } from './leaders/leaders-modal/leaders-modal.component';
 import { StudentModalComponent, StudentsModalComponent } from './students/student-modal/student-modal.component';
+import { SubjectModalComponent, SubjectsModalComponent } from './subjects/subjects-modal/subjects-modal.component';
 
 import { AdministratorsComponent } from './administrators/administrators.component';
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { NgModule } from '@angular/core';
 import { NgSelectizeModule } from 'ng-selectize';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudentsComponent } from './students/students.component';
+import { SubjectsComponent } from './subjects/subjects.component';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -51,7 +53,10 @@ import { ToastrModule } from 'ngx-toastr';
     AdministratorModalComponent,
     LeadersComponent,
     LeadersModalComponent,
-    LeaderModalComponent
+    LeaderModalComponent,
+    SubjectsComponent,
+    SubjectsModalComponent,
+    SubjectModalComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +76,8 @@ import { ToastrModule } from 'ngx-toastr';
     DeparmentModalComponent,
     DeanGroupModalComponent,
     AdministratorModalComponent,
-    LeaderModalComponent
+    LeaderModalComponent,
+    SubjectModalComponent
   ],
   providers: [
     Globals,

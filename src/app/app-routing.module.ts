@@ -14,6 +14,8 @@ import { LeadersComponent } from './leaders/leaders.component';
 import { LeadersModalComponent } from './leaders/leaders-modal/leaders-modal.component';
 import { StudentModalComponent } from './students/student-modal/student-modal.component';
 import { StudentsComponent } from './students/students.component';
+import { SubjectsComponent } from './subjects/subjects.component';
+import { SubjectsModalComponent } from './subjects/subjects-modal/subjects-modal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/students', pathMatch: 'full' },
@@ -145,6 +147,28 @@ const routes: Routes = [
         data: {
           title: 'prowadzącego',
           state: 'leaders'
+        }
+      }
+    ]
+  },
+  {
+    path: 'subjects',
+    component: SubjectsComponent,
+    children: [
+      {
+        path: 'add',
+        component: SubjectsModalComponent
+      },
+      {
+        path: 'edit/:id',
+        component: SubjectsModalComponent
+      },
+      {
+        path: 'delete',
+        component: DeleteModalComponent,
+        data: {
+          title: 'przedmiot',
+          state: 'subjects'
         }
       }
     ]
