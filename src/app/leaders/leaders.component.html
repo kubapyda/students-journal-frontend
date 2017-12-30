@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['add']">Dodaj</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Stopień</th>
+      <th>Login</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let leader of leadersService.leadersList">
+      <th scope="row">{{ leader.lead_ID }}</th>
+      <td>{{ leader.lead_name }}</td>
+      <td>{{ leader.lead_surname }}</td>
+      <td>{{ leader.lead_degree }}</td>
+      <td>{{ leader.lead_login }}</td>
+      <td>
+        <button [routerLink]="['edit', leader.lead_ID]" class="btn btn-edit">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td>
+        <button [routerLink]="['delete']" [queryParams]="{ id: leader.lead_ID, name: leader.lead_name + ' ' + leader.lead_surname }" class="btn btn-edit">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

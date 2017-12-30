@@ -10,6 +10,8 @@ import { DeparmentsModalComponent } from './departments/deparments-modal/deparme
 import { DepartmentsComponent } from './departments/departments.component';
 import { DirectionModalComponent } from './directions/direction-modal/direction-modal.component';
 import { DirectionsComponent } from './directions/directions.component';
+import { LeadersComponent } from './leaders/leaders.component';
+import { LeadersModalComponent } from './leaders/leaders-modal/leaders-modal.component';
 import { StudentModalComponent } from './students/student-modal/student-modal.component';
 import { StudentsComponent } from './students/students.component';
 
@@ -121,6 +123,28 @@ const routes: Routes = [
         data: {
           title: 'administratora',
           state: 'administrators'
+        }
+      }
+    ]
+  },
+  {
+    path: 'leaders',
+    component: LeadersComponent,
+    children: [
+      {
+        path: 'add',
+        component: LeadersModalComponent
+      },
+      {
+        path: 'edit/:id',
+        component: LeadersModalComponent
+      },
+      {
+        path: 'delete',
+        component: DeleteModalComponent,
+        data: {
+          title: 'prowadzącego',
+          state: 'leaders'
         }
       }
     ]

@@ -1,0 +1,36 @@
+<form #leadersForm="ngForm" (ngSubmit)="save()">
+  <div class="modal-header">
+    <h4 class="modal-title">Dodaj lub edytuj: Studenta</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <div class="single-input">
+          <label>Imię</label>
+          <input class="form-control" type="text" [(ngModel)]="leadersService.leader.lead_name" name="leadName" #leadName="ngModel" required>
+        </div>
+        <div class="single-input">
+          <label>Nazwisko</label>
+          <input class="form-control" type="text" [(ngModel)]="leadersService.leader.lead_surname" name="leadSurname" #leadSurname="ngModel" required>
+        </div>
+        <div class="single-input selectize">
+          <label>Stopień</label>
+          <ng-selectize [config]="selectizeConfig" [options]="leadersDegreeOptions" [(ngModel)]="leadersService.leader.lead_degree" name="leadDegree" #leadDegree="ngModel" required></ng-selectize>
+        </div>
+        <div class="single-input">
+          <label>Login</label>
+          <input class="form-control" type="text" [(ngModel)]="leadersService.leader.lead_login" name="leadLogin" #leadLogin="ngModel" required>
+        </div>
+        <div class="single-input">
+          <label>Haslo</label>
+          <input class="form-control" type="password" [(ngModel)]="leadersService.leader.lead_password" name="leadPassword" #leadPassword="ngModel" required>
+        </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close()">Zamknij</button>
+    <button type="submit" [disabled]="!leadersForm.valid" class="btn btn-primary">Zapisz</button>
+  </div>
+</form>
+
+
