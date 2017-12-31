@@ -11,6 +11,8 @@ export class SubjectsService {
   private url: string;
   public subjectsList: Subject[];
   public subject: Subject = new Subject('');
+  public leaderSubject;
+  public isSelectizeEnable = false;
 
   constructor(private http: HttpClient, private global: Globals) {
     this.url = `${global.apiAddress}/api/subjects`;
@@ -19,6 +21,14 @@ export class SubjectsService {
   getSubjectsList() {
     this.http.get<Subject[]>(this.url).subscribe(data => {
       this.subjectsList = data;
+    });
+  }
+
+  getLeaderSubjects(id: number) {
+    this.url = `${this.global.apiAddress}/api/selectize/${id}`;
+    this.http.get(this.url).subscribe(data => {
+      this.leaderSubject = data;
+      this.isSelectizeEnable = true;
     });
   }
 

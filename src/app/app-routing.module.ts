@@ -12,6 +12,8 @@ import { DirectionModalComponent } from './directions/direction-modal/direction-
 import { DirectionsComponent } from './directions/directions.component';
 import { LeadersComponent } from './leaders/leaders.component';
 import { LeadersModalComponent } from './leaders/leaders-modal/leaders-modal.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsModalComponent } from './projects/projects-modal/projects-modal.component';
 import { StudentModalComponent } from './students/student-modal/student-modal.component';
 import { StudentsComponent } from './students/students.component';
 import { SubjectsComponent } from './subjects/subjects.component';
@@ -169,6 +171,28 @@ const routes: Routes = [
         data: {
           title: 'przedmiot',
           state: 'subjects'
+        }
+      }
+    ]
+  },
+  {
+    path: 'projects',
+    component: ProjectsComponent,
+    children: [
+      {
+        path: 'add',
+        component: ProjectsModalComponent
+      },
+      {
+        path: 'edit/:id',
+        component: ProjectsModalComponent
+      },
+      {
+        path: 'delete',
+        component: DeleteModalComponent,
+        data: {
+          title: 'projekt',
+          state: 'projects'
         }
       }
     ]

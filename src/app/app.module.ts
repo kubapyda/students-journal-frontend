@@ -7,6 +7,7 @@ import { DeleteModalComponent, DeletedModalComponent } from './delete-modal/dele
 import { DeparmentModalComponent, DeparmentsModalComponent } from './departments/deparments-modal/deparments-modal.component';
 import { DirectionModalComponent, DirectionsModalComponent } from './directions/direction-modal/direction-modal.component';
 import { LeaderModalComponent, LeadersModalComponent } from './leaders/leaders-modal/leaders-modal.component';
+import { ProjectModalComponent, ProjectsModalComponent } from './projects/projects-modal/projects-modal.component';
 import { StudentModalComponent, StudentsModalComponent } from './students/student-modal/student-modal.component';
 import { SubjectModalComponent, SubjectsModalComponent } from './subjects/subjects-modal/subjects-modal.component';
 
@@ -27,6 +28,7 @@ import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 import { NgModule } from '@angular/core';
 import { NgSelectizeModule } from 'ng-selectize';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProjectsComponent } from './projects/projects.component';
 import { StudentsComponent } from './students/students.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { ToastrModule } from 'ngx-toastr';
@@ -56,7 +58,10 @@ import { ToastrModule } from 'ngx-toastr';
     LeaderModalComponent,
     SubjectsComponent,
     SubjectsModalComponent,
-    SubjectModalComponent
+    SubjectModalComponent,
+    ProjectsComponent,
+    ProjectsModalComponent,
+    ProjectModalComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +82,8 @@ import { ToastrModule } from 'ngx-toastr';
     DeanGroupModalComponent,
     AdministratorModalComponent,
     LeaderModalComponent,
-    SubjectModalComponent
+    SubjectModalComponent,
+    ProjectModalComponent
   ],
   providers: [
     Globals,

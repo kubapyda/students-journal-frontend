@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['add']">Dodaj</button>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tytuł</th>
+      <th>Liczba studentów</th>
+      <th>Prowadzący</th>
+      <th>Przedmiot</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of projectsService.projectsList">
+      <th scope="row">{{ project.id }}</th>
+      <td>{{ project.title }}</td>
+      <td>{{ project.studentNumber }}</td>
+      <td>{{ project.leader }}</td>
+      <td>{{ project.subject }}</td>
+      <td>
+        <button [routerLink]="['edit', project.id]" class="btn btn-edit">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </td>
+      <td>
+        <button [routerLink]="['delete']" [queryParams]="{ id: project.id, name: project.title }" class="btn btn-edit">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
