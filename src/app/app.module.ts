@@ -14,6 +14,7 @@ import { SubjectModalComponent, SubjectsModalComponent } from './subjects/subjec
 import { AdministratorsComponent } from './administrators/administrators.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthService } from './shared/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { DeanGroupComponent } from './dean-group/dean-group.component';
@@ -24,14 +25,19 @@ import { Globals } from './global';
 import { HelpersService } from './helpers.service';
 import { HttpClientModule } from '@angular/common/http';
 import { LeadersComponent } from './leaders/leaders.component';
+import { LoginComponent } from './login/login.component';
 import { NgHttpLoaderModule } from 'ng-http-loader/ng-http-loader.module';
 import { NgModule } from '@angular/core';
 import { NgSelectizeModule } from 'ng-selectize';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProjectsComponent } from './projects/projects.component';
+import { RoleGuardService } from './shared/role.service';
 import { StudentsComponent } from './students/students.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ProjectsgradleComponent } from './projectsgradle/projectsgradle.component';
+import { JoinProjectComponent } from './join-project/join-project.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +67,11 @@ import { ToastrModule } from 'ngx-toastr';
     SubjectModalComponent,
     ProjectsComponent,
     ProjectsModalComponent,
-    ProjectModalComponent
+    ProjectModalComponent,
+    LoginComponent,
+    SidebarComponent,
+    ProjectsgradleComponent,
+    JoinProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +97,9 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   providers: [
     Globals,
-    HelpersService
+    HelpersService,
+    RoleGuardService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,6 +9,7 @@ import { Subject } from './subject';
 export class SubjectsService {
 
   private url: string;
+  private requestHeader: HttpHeaders;
   public subjectsList: Subject[];
   public subject: Subject = new Subject('');
   public leaderSubject;
@@ -16,10 +17,11 @@ export class SubjectsService {
 
   constructor(private http: HttpClient, private global: Globals) {
     this.url = `${global.apiAddress}/api/subjects`;
+    this.requestHeader = new HttpHeaders({'Authorization': localStorage.getItem('token')});
   }
 
   getSubjectsList() {
-    this.http.get<Subject[]>(this.url).subscribe(data => {
+    this.http.get<Subject[]>(this.url, { headers: this.requestHeader }).subscribe(data => {
       this.subjectsList = data;
     });
   }
@@ -33,16 +35,16 @@ export class SubjectsService {
   }
 
   getSubject(id: number) {
-    this.http.get<Subject>(`${this.url}/${id}`).subscribe(data => {
+    this.http.get<Subject>(`${this.url}/${id}`, { headers: this.requestHeader }).subscribe(data => {
       this.subject = data;
     });
   }
 
   putSubject(subject: Subject, id: number) {
-    return this.http.put(`${this.url}/${id}`, subject);
+    return this.http.put(`${this.url}/${id}`, subject, { headers: this.requestHeader });
   }
 
   postSubject(subject: Subject) {
-    return this.http.post(this.url, subject);
+    return this.http.post(this.url, subject, { headers: this.requestHeader });
   }
 }

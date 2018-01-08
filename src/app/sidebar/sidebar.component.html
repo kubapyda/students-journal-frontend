@@ -1,0 +1,10 @@
+<div class="list-group">
+  <span *ngFor="let item of menuItem">
+  <a class="list-group-item"
+    routerLink="{{ item.link }}"
+    [ngClass]="{'active main-color-bg': item.active }"
+    (click)="isActive(item)"
+    *ngIf="isAuthenticated(item)">{{ item.name }}</a>
+  </span>
+  <a routerLink="/login" class="list-group-item" (click)="logout()" *ngIf="isAuthenticatedLogout()">Wyloguj</a>
+</div>

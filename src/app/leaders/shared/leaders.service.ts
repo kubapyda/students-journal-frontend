@@ -9,16 +9,18 @@ import { Leader } from './leader';
 export class LeadersService {
 
   private url: string;
+  private requestHeader: HttpHeaders;
   public leadersList: Leader[];
   public leadersForSelectize;
   public leader: Leader = new Leader('', '', '', '', '');
 
   constructor(private http: HttpClient, private global: Globals) {
     this.url = `${global.apiAddress}/api/leaders`;
+    this.requestHeader = new HttpHeaders({'Authorization': localStorage.getItem('token')});
   }
 
   getLeadersList() {
-    this.http.get<Leader[]>(this.url).subscribe(data => {
+    this.http.get<Leader[]>(this.url, { headers: this.requestHeader }).subscribe(data => {
       this.leadersList = data;
     });
   }
@@ -31,16 +33,16 @@ export class LeadersService {
   }
 
   getLeader(id: number) {
-    this.http.get<Leader>(`${this.url}/${id}`).subscribe(data => {
+    this.http.get<Leader>(`${this.url}/${id}`, { headers: this.requestHeader }).subscribe(data => {
       this.leader = data;
     });
   }
 
   putLeader(leader: Leader, id: number) {
-    return this.http.put(`${this.url}/${id}`, leader);
+    return this.http.put(`${this.url}/${id}`, leader, { headers: this.requestHeader });
   }
 
   postLeader(leader: Leader) {
-    return this.http.post(this.url, leader);
+    return this.http.post(this.url, leader, { headers: this.requestHeader });
   }
 }

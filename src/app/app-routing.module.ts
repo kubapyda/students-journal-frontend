@@ -10,20 +10,28 @@ import { DeparmentsModalComponent } from './departments/deparments-modal/deparme
 import { DepartmentsComponent } from './departments/departments.component';
 import { DirectionModalComponent } from './directions/direction-modal/direction-modal.component';
 import { DirectionsComponent } from './directions/directions.component';
+import { JoinProjectComponent } from './join-project/join-project.component';
 import { LeadersComponent } from './leaders/leaders.component';
 import { LeadersModalComponent } from './leaders/leaders-modal/leaders-modal.component';
+import { LoginComponent } from './login/login.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsModalComponent } from './projects/projects-modal/projects-modal.component';
+import { ProjectsgradleComponent } from './projectsgradle/projectsgradle.component';
+import { RoleGuardService } from './shared/role.service';
 import { StudentModalComponent } from './students/student-modal/student-modal.component';
 import { StudentsComponent } from './students/students.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { SubjectsModalComponent } from './subjects/subjects-modal/subjects-modal.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/students', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: 'students',
     component: StudentsComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -46,6 +54,10 @@ const routes: Routes = [
   {
     path: 'directions',
     component: DirectionsComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -68,6 +80,10 @@ const routes: Routes = [
   {
     path: 'departments',
     component: DepartmentsComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -90,6 +106,10 @@ const routes: Routes = [
   {
     path: 'deangroup',
     component: DeanGroupComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -112,6 +132,10 @@ const routes: Routes = [
   {
     path: 'administrators',
     component: AdministratorsComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -134,6 +158,10 @@ const routes: Routes = [
   {
     path: 'leaders',
     component: LeadersComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -156,6 +184,10 @@ const routes: Routes = [
   {
     path: 'subjects',
     component: SubjectsComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -178,6 +210,10 @@ const routes: Routes = [
   {
     path: 'projects',
     component: ProjectsComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'ADMINISTRATOR'
+    },
     children: [
       {
         path: 'add',
@@ -196,7 +232,26 @@ const routes: Routes = [
         }
       }
     ]
-  }
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'projects-gradle',
+    component: ProjectsgradleComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'LEADER'
+    }
+  }, {
+    path: 'join-project',
+    component: JoinProjectComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'USER'
+    }
+  },
 ];
 
 @NgModule({
