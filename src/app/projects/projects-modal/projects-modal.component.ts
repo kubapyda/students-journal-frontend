@@ -18,6 +18,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ProjectModalComponent implements OnInit {
 
   private id: number;
+  private leaderName: string;
   public selectizeConfig: Object;
   public selectizeSubjectConfig: Object;
 
@@ -56,6 +57,12 @@ export class ProjectModalComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.getLeaderName();
+    if (this.isLeader()) {
+      this.subjectsService.getLeaderSubjects(+localStorage.getItem('userId'));
+      this.projectsService.project.lead_ID = +localStorage.getItem('userId');
+    }
     if (this.id) {
       this.projectsService.getProject(this.id);
     }
@@ -84,6 +91,14 @@ export class ProjectModalComponent implements OnInit {
   afterChangeData(): void {
     this.activeModal.close();
     this.router.navigate(['../../projects']);
+  }
+
+  isLeader(): Boolean {
+    return localStorage.getItem('role') === 'LEADER';
+  }
+
+  getLeaderName(): void {
+    this.leaderName = localStorage.getItem('userName');
   }
 }
 

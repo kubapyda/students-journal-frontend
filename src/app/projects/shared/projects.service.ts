@@ -11,6 +11,7 @@ export class ProjectsService {
   private url: string;
   private requestHeader: HttpHeaders;
   public projectsList: Project[];
+  public selectizeProjectsList: Project[];
   public project: Project = new Project('');
 
   constructor(private http: HttpClient, private global: Globals) {
@@ -21,6 +22,12 @@ export class ProjectsService {
   getProjectsList() {
     this.http.get<Project[]>(this.url, { headers: this.requestHeader }).subscribe(data => {
       this.projectsList = data;
+    });
+  }
+
+  getSelectizeProjectsList(id: number) {
+    this.http.get<Project[]>(`${this.url}?id=${id}&isLeader=true`, { headers: this.requestHeader }).subscribe(data => {
+      this.selectizeProjectsList = data;
     });
   }
 

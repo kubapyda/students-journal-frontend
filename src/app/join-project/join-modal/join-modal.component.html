@@ -1,0 +1,34 @@
+<div class="modal-header">
+  <h4 class="modal-title">Dołącz do projektu</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <table class="table table-striped modal-table">
+    <thead>
+      <tr>
+        <th>Tytuł</th>
+        <th>Liczba studentów</th>
+        <th>Prowadzący</th>
+        <th>Przedmiot</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projectsService.projectsList">
+        <td>{{ project.title }}</td>
+        <td>{{ project.studentNumber }}</td>
+        <td>{{ project.leader }}</td>
+        <td>{{ project.subject }}</td>
+        <td>
+          <span *ngIf="!isSent">
+            <button class="btn btn-success mr-3" (click)="joinToProject(project)">Dołącz</button>
+          </span>
+          <span class="badge badge-info" *ngIf="isSent">Dołączono</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

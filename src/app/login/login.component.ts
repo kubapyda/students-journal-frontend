@@ -5,6 +5,7 @@ import { Globals } from './../global';
 import { HttpClient } from '@angular/common/http';
 import { Login } from './../shared/login';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toast: ToastrService
   ) { }
 
   ngOnInit() {
@@ -37,13 +39,13 @@ export class LoginComponent implements OnInit {
         if (userRole === 'ADMINISTRATOR') {
           this.router.navigate(['../../directions']);
         } else if (userRole === 'LEADER') {
-          this.router.navigate(['../../projects-gradle']);
+          this.router.navigate(['../../subjects-gradle']);
         } else if (userRole === 'USER') {
-          this.router.navigate(['../../join-project']);
+          this.router.navigate(['../../subjects-gradle-view']);
         }
       });
     }, err => {
-      console.log(err);
+      this.toast.error('Błąd podczas próby zalogowania się');
     });
   }
 

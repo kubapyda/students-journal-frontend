@@ -14,9 +14,14 @@
           <label>Liczba studentów</label>
           <input class="form-control" type="number" [(ngModel)]="projectsService.project.project_students_number" name="projectStudentNumber" #projectStudentNumber="ngModel" required>
         </div>
-        <div class="single-input selectize">
+
+        <div class="single-input selectize" *ngIf="!isLeader()">
           <label>Prowadzący</label>
           <ng-selectize [config]="selectizeConfig" [options]="leadersService.leadersForSelectize" [(ngModel)]="projectsService.project.lead_ID" name="leadID" #leadID="ngModel" required></ng-selectize>
+        </div>
+        <div class="single-input" *ngIf="isLeader()">
+          <label>Prowadzący</label>
+          <input class="form-control" type="text" [(ngModel)]="leaderName" name="leadName" #leadName="ngModel" [disabled]="true">
         </div>
 
         <div class="single-input selectize">

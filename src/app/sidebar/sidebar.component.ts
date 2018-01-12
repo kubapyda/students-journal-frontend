@@ -50,37 +50,37 @@ export class SidebarComponent {
       auth: 'ADMINISTRATOR',
       active: false
     }, {
-      link: '/projects-gradle',
+      link: '/subjects-gradle',
       name: 'Oceny z przedmiotów',
       auth: 'LEADER',
       active: true
     }, {
-      link: '#',
+      link: '/projects-gradle',
       name: 'Oceny z projektów',
       auth: 'LEADER',
       active: false
     }, {
-      link: '#',
+      link: '/projects',
       name: 'Dodaj projekt',
       auth: 'LEADER',
       active: false
     }, {
-      link: '#',
+      link: '/projects-member',
       name: 'Członkowie projektów',
       auth: 'LEADER',
       active: false
     }, {
-      link: '#',
+      link: '/students',
       name: 'Dodaj usuń studenta',
       auth: 'LEADER',
       active: false
     }, {
-      link: '#',
+      link: '/subjects-gradle-view',
       name: 'Oceny z przedmiotów',
       auth: 'USER',
       active: true
     }, {
-      link: '#',
+      link: '/project-gradle-view',
       name: 'Oceny z projektów',
       auth: 'USER',
       active: false
@@ -112,7 +112,6 @@ export class SidebarComponent {
     for (let i = 0; i < this.menuItem.length; i++) {
       if (this.menuItem[i].active) {
         this.menuItem[i].active = false;
-        break;
       }
     }
     item[key[3]] = true;

@@ -1,23 +1,23 @@
 <router-outlet></router-outlet>
 
 <div class="p-3">
-  <button class="btn btn-success" [routerLink]="['exhibitions']">Ocena z projektu</button>
+  <button class="btn btn-success" [routerLink]="['exhibitions']">Ocena z przedmiotu</button>
 </div>
 
 <table class="table join-project table-striped">
   <thead>
     <tr>
       <th>Data</th>
-      <th>Tytuł projektu</th>
       <th>Student</th>
+      <th>Typ przedmiotu</th>
       <th>Ocena</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let gradle of gradlesProjectService.gradlesProject">
+    <tr *ngFor="let gradle of gradlesSubjectService.gradlesProject">
       <td>{{ gradle.date }}</td>
-      <td>{{ gradle.project }}</td>
       <td>{{ gradle.student }}</td>
+      <td>{{ gradle.type }}</td>
       <td>{{ gradle.gradle }}</td>
     </tr>
   </tbody>

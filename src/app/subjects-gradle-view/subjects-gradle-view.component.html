@@ -1,0 +1,18 @@
+<table class="table join-project table-striped">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Prowadzący</th>
+      <th>Typ przedmiotu</th>
+      <th>Ocena</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let gradle of gradlesSubjectService.gradlesProject">
+      <td>{{ gradle.date }}</td>
+      <td>{{ gradle.leader }}</td>
+      <td>{{ gradle.type }}</td>
+      <td>{{ gradle.gradle }}</td>
+    </tr>
+  </tbody>
+</table>

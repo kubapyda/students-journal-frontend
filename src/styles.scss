@@ -4,6 +4,17 @@
 @import "~ngx-toastr/toastr.css";
 
 table {
+    &.join-project {
+      tbody {
+        tr {
+          td {
+            &:last-child {
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
     tbody {
         tr {
             td {
@@ -27,6 +38,35 @@ table {
             }
         }
     }
+}
+
+.modal-table {
+  thead {
+    tr {
+      th {
+        &:first-child {
+          border-left: 1px solid #e9ecef;
+        }
+        &:last-child {
+          max-width: 60px;
+          border-right: 1px solid #e9ecef;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        &:first-child {
+          border-left: 1px solid #e9ecef;
+        }
+        &:last-child {
+          max-width: 60px;
+          border-right: 1px solid #e9ecef;
+        }
+      }
+    }
+  }
 }
 
 
@@ -78,4 +118,11 @@ form {
 
 .form-signin .btn-block {
   margin-top: 20px;
+}
+
+
+.full-width-modal {
+  .modal-dialog {
+    max-width: 80%;
+  }
 }

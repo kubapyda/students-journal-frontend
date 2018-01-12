@@ -11,6 +11,7 @@ export class StudentsService {
   private url: string;
   private requestHeader: HttpHeaders;
   public studentsList: Student[];
+  public selectizeStudentsList: Student[];
   public student: Student = new Student('', '', '', '', '');
 
   constructor(private http: HttpClient, private global: Globals) {
@@ -21,6 +22,12 @@ export class StudentsService {
   getStudentsList() {
     this.http.get<Student[]>(this.url, { headers: this.requestHeader }).subscribe(data => {
       this.studentsList = data;
+    });
+  }
+
+  getSelectizeStudentsList() {
+    this.http.get<Student[]>(`${this.global.apiAddress}/api/selectize?isStudent=true`, { headers: this.requestHeader }).subscribe(data => {
+      this.selectizeStudentsList = data;
     });
   }
 

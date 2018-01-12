@@ -10,17 +10,24 @@ import { DeparmentsModalComponent } from './departments/deparments-modal/deparme
 import { DepartmentsComponent } from './departments/departments.component';
 import { DirectionModalComponent } from './directions/direction-modal/direction-modal.component';
 import { DirectionsComponent } from './directions/directions.component';
+import { JoinModalComponent } from './join-project/join-modal/join-modal.component';
 import { JoinProjectComponent } from './join-project/join-project.component';
 import { LeadersComponent } from './leaders/leaders.component';
 import { LeadersModalComponent } from './leaders/leaders-modal/leaders-modal.component';
 import { LoginComponent } from './login/login.component';
+import { ProjectGradleViewComponent } from './project-gradle-view/project-gradle-view.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsGradleModalComponent } from './projectsgradle/projects-gradle-modal/projects-gradle-modal.component';
+import { ProjectsMemberComponent } from './projects-member/projects-member.component';
 import { ProjectsModalComponent } from './projects/projects-modal/projects-modal.component';
 import { ProjectsgradleComponent } from './projectsgradle/projectsgradle.component';
 import { RoleGuardService } from './shared/role.service';
 import { StudentModalComponent } from './students/student-modal/student-modal.component';
 import { StudentsComponent } from './students/students.component';
 import { SubjectsComponent } from './subjects/subjects.component';
+import { SubjectsGradleComponent } from './subjects-gradle/subjects-gradle.component';
+import { SubjectsGradleModalComponent } from './subjects-gradle/subjects-gradle-modal/subjects-gradle-modal.component';
+import { SubjectsGradleViewComponent } from './subjects-gradle-view/subjects-gradle-view.component';
 import { SubjectsModalComponent } from './subjects/subjects-modal/subjects-modal.component';
 
 const routes: Routes = [
@@ -30,7 +37,7 @@ const routes: Routes = [
     component: StudentsComponent,
     canActivate: [ RoleGuardService ],
     data: {
-      roles: 'ADMINISTRATOR'
+      roles: ['ADMINISTRATOR', 'LEADER']
     },
     children: [
       {
@@ -212,7 +219,7 @@ const routes: Routes = [
     component: ProjectsComponent,
     canActivate: [ RoleGuardService ],
     data: {
-      roles: 'ADMINISTRATOR'
+      roles: ['ADMINISTRATOR', 'LEADER']
     },
     children: [
       {
@@ -243,15 +250,61 @@ const routes: Routes = [
     canActivate: [ RoleGuardService ],
     data: {
       roles: 'LEADER'
-    }
+    },
+    children: [
+      {
+        path: 'exhibitions',
+        component: ProjectsGradleModalComponent
+      }
+    ]
   }, {
     path: 'join-project',
     component: JoinProjectComponent,
     canActivate: [ RoleGuardService ],
     data: {
       roles: 'USER'
+    },
+    children: [
+      {
+        path: 'join',
+        component: JoinModalComponent
+      }
+    ]
+  }, {
+    path: 'projects-member',
+    component: ProjectsMemberComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'LEADER'
     }
-  },
+  }, {
+    path: 'project-gradle-view',
+    component: ProjectGradleViewComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'USER'
+    }
+  }, {
+    path: 'subjects-gradle',
+    component: SubjectsGradleComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'LEADER'
+    },
+    children: [
+      {
+        path: 'exhibitions',
+        component: SubjectsGradleModalComponent
+      }
+    ]
+  }, {
+    path: 'subjects-gradle-view',
+    component: SubjectsGradleViewComponent,
+    canActivate: [ RoleGuardService ],
+    data: {
+      roles: 'USER'
+    }
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,21 @@
+<table class="table join-project table-striped">
+  <thead>
+    <tr>
+      <th>Tytuł projektu</th>
+      <th>Student</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of memberInProjectService.studentProjects">
+      <td>{{ project.project }}</td>
+      <td>{{ project.student }}</td>
+      <td *ngIf="!project.approved">
+        <button class="btn btn-info" (click)="approve(project)">Zatwierdź</button>
+      </td>
+      <td *ngIf="project.approved">
+        <span class="badge badge-info">Zatwierdzono</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

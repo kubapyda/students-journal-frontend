@@ -1,3 +1,25 @@
-<p>
-  join-project works!
-</p>
+<router-outlet></router-outlet>
+
+<div class="p-3">
+  <button class="btn btn-success" [routerLink]="['join']">Dołącz do projektu</button>
+</div>
+
+<table class="table join-project table-striped">
+  <thead>
+    <tr>
+      <th>Tytuł projektu</th>
+      <th>Prowadzący</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let project of memberInProjectService.studentProjects">
+      <td>{{ project.project }}</td>
+      <td>{{ project.leader }}</td>
+      <td>
+        <span class="badge badge-pill badge-success" *ngIf="project.approved">Zatwierdzono</span>
+        <span class="badge badge-pill badge-info" *ngIf="!project.approved">Oczekiwanie na zatwierdzenie</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

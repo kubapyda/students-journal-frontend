@@ -14,6 +14,16 @@ export class RoleGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const roles = route.data['roles'];
-    return localStorage.getItem('role') === roles;
+    const role = localStorage.getItem('role');
+    if (Array.isArray(roles)) {
+      for (let i = 0; i < roles.length; i++) {
+        if (role === roles[i]) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      return localStorage.getItem('role') === roles;
+    }
   }
 }
