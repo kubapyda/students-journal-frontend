@@ -4,7 +4,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { Direction } from '../shared/direction';
 import { DirectionsService } from './../shared/directions.service';
-import { HelpersService } from './../../helpers.service';
+import { HelpersService } from './../../service/helpers.service';
 import { HttpClient } from '@angular/common/http';
 import { Subscription } from 'rxjs/Rx';
 import { ToastrService } from 'ngx-toastr';

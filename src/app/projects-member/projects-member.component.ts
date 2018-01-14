@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MemberInProject } from '../join-project/shared/MemberInProject';
-import { MemberInProjectService } from './../join-project/shared/memberInProject.service';
+import { MemberInProject } from './../global/MemberInProject';
+import { MemberInProjectService } from './../service/memberInProject.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

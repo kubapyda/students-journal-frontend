@@ -3,7 +3,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router, RouterStateSnapshot } from '@angular/router';
 
 import { AdministratorsService } from './../shared/administrators.service';
-import { Globals } from '../../global';
+import { Globals } from './../../global/global';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

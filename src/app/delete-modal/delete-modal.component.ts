@@ -2,7 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { HelpersService } from './../helpers.service';
+import { HelpersService } from './../service/helpers.service';
 import { Properties } from './properties';
 import { Subscription } from 'rxjs/Rx';
 import { ToastrService } from 'ngx-toastr';

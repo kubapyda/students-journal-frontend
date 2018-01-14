@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../shared/auth.service';
-import { Globals } from './../global';
+import { AuthService } from './../service/auth.service';
+import { Globals } from './../global/global';
 import { HttpClient } from '@angular/common/http';
-import { Login } from './../shared/login';
+import { Login } from './../global/login';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 

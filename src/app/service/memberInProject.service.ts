@@ -1,9 +1,9 @@
 import { Headers, RequestMethod, RequestOptions } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Globals } from '../../global';
+import { Globals } from './../global/global';
 import { Injectable } from '@angular/core';
-import { MemberInProject } from './MemberInProject';
+import { MemberInProject } from './../global/MemberInProject';
 
 @Injectable()
 export class MemberInProjectService {

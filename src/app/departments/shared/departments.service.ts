@@ -2,7 +2,7 @@ import { Headers, RequestMethod, RequestOptions } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Department } from './department';
-import { Globals } from '../../global';
+import { Globals } from './../../global/global';
 import { Injectable } from '@angular/core';
 
 @Injectable()

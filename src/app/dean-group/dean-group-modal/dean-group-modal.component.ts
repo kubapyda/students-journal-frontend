@@ -4,7 +4,7 @@ import { Router, RouterStateSnapshot } from '@angular/router';
 
 import { DeanGroupService } from '../shared/dean-group.service';
 import { DepartmentsService } from '../../departments/shared/departments.service';
-import { Globals } from './../../global';
+import { Globals } from './../../global/global';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

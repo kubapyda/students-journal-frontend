@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MemberInProject } from '../shared/MemberInProject';
-import { MemberInProjectService } from '../shared/memberInProject.service';
+import { MemberInProject } from './../../global/MemberInProject';
+import { MemberInProjectService } from './../../service/memberInProject.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProjectsService } from '../../projects/shared/projects.service';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterStateSnapshot } from '@angular/router';
 
-import { Globals } from '../../global';
+import { Globals } from './../../global/global';
 import { LeadersService } from './../../leaders/shared/leaders.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';

@@ -1,7 +1,7 @@
 import { Headers, RequestMethod, RequestOptions } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Globals } from '../../global';
+import { Globals } from './../../global/global';
 import { Injectable } from '@angular/core';
 import { Student } from './student';
 

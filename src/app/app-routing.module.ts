@@ -21,7 +21,7 @@ import { ProjectsGradleModalComponent } from './projectsgradle/projects-gradle-m
 import { ProjectsMemberComponent } from './projects-member/projects-member.component';
 import { ProjectsModalComponent } from './projects/projects-modal/projects-modal.component';
 import { ProjectsgradleComponent } from './projectsgradle/projectsgradle.component';
-import { RoleGuardService } from './shared/role.service';
+import { RoleGuardService } from './service/role.service';
 import { StudentModalComponent } from './students/student-modal/student-modal.component';
 import { StudentsComponent } from './students/students.component';
 import { SubjectsComponent } from './subjects/subjects.component';

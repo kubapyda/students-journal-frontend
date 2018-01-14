@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Globals } from '../../global';
-import { GradleProject } from '../../shared/gradleProject';
-import { GradlesProjectService } from './../../shared/gradlesProject.service';
+import { Globals } from './../../global/global';
+import { GradleProject } from './../../global/gradleProject';
+import { GradlesProjectService } from './../../service/gradlesProject.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap/modal/modal-ref';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal';
 import { ProjectsService } from '../../projects/shared/projects.service';

@@ -3,7 +3,7 @@ import { Router, RouterStateSnapshot } from '@angular/router';
 
 import { Component } from '@angular/core';
 import { DeanGroupService } from './../../dean-group/shared/dean-group.service';
-import { Globals } from '../../global';
+import { Globals } from './../../global/global';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 import { StudentsService } from './../shared/students.service';
 import { ToastrService } from 'ngx-toastr';

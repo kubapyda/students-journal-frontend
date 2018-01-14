@@ -1,9 +1,9 @@
 import { Headers, RequestMethod, RequestOptions } from '@angular/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Globals } from '../global';
-import { GradleProject } from './gradleProject';
-import { GradleSubject } from './gradleSubject';
+import { Globals } from './../global/global';
+import { GradleProject } from './../global/gradleProject';
+import { GradleSubject } from './../global/gradleSubject';
 import { Injectable } from '@angular/core';
 
 @Injectable()

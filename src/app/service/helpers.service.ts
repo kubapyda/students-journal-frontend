@@ -1,4 +1,4 @@
-import { Globals } from './global';
+import { Globals } from './../global/global';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';

@@ -1,6 +1,6 @@
 import { Router, RouterStateSnapshot } from '@angular/router';
 
-import { AuthService } from './shared/auth.service';
+import { AuthService } from './service/auth.service';
 import { Component } from '@angular/core';
 import { RouterState } from '@angular/router/src/router_state';
 

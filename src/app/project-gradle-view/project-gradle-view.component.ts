@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GradlesProjectService } from '../shared/gradlesProject.service';
+import { GradlesProjectService } from './../service/gradlesProject.service';
 
 @Component({
   selector: 'app-project-gradle-view',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 
-import { MemberInProjectService } from './shared/memberInProject.service';
+import { MemberInProjectService } from './../service/memberInProject.service';
 
 @Component({
   selector: 'app-join-project',
